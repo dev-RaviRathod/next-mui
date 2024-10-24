@@ -1,0 +1,72 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [ "next/core-web-vitals", "eslint:recommended", "plugin:react/recommended"],
+  "plugins": [
+    "import", // eslint-plugin-import plugin. https://www.npmjs.com/package/eslint-plugin-import,
+    "unused-imports"
+  ],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "no-empty": ["error", { "allowEmptyCatch": true }],
+    "no-trailing-spaces": ["warn", { "skipBlankLines": true }],
+    "no-empty-function": [
+      "error",
+      {
+        "allow": ["constructors", "arrowFunctions"]
+      }
+    ],
+    "no-duplicate-imports": "warn",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false
+      }
+    ],
+    "import/order": [
+      "warn",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "index",
+          "sibling",
+          "parent",
+          "internal"
+        ]
+      }
+    ],
+    "react-hooks/rules-of-hooks": "off", // error // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "off",
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": 0,
+    "@next/next/no-img-element":0
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  }
+}
